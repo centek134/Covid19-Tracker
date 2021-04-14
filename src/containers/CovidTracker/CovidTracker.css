@@ -1,0 +1,14 @@
+main{
+    display: flex;
+}
+.sml-chart, .big-chart{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.sml-chart{
+    width: 40%;
+}
+.big-chart{
+    width: 60%;
+}
