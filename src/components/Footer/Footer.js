@@ -3,10 +3,8 @@ import './Footer.css';
 
 const Footer = () => {
     return(
-        <footer>
-            <p>some info</p>
-            <p>some info</p>
-            <p>some info</p>
+        <footer className = "foot">
+            <p>Data in charts are gathered from COVID 19 API</p>
         </footer>
     );
 };

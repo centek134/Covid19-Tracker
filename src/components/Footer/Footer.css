@@ -1,0 +1,10 @@
+.wrapp .foot{
+    height: 50px;
+    width: 100%;
+    background-color: rgb(39, 26, 9);
+    color: white;
+    text-align: center;
+}
+.wrapp .foot p{
+    line-height: 50px;
+}
