@@ -8,12 +8,14 @@ const Header = (props) => {
             <div>
             <p>Select country:</p>
                 <select>
-                    <option>option 1</option>
-                    <option>option 2</option>
-                    <option>option 3</option>
-                    <option>option 4</option>
-                    <option>option 5</option>
-                    <option>option 6</option>
+                {props.shouldRender? props.selectOptions.map(country => {
+                        return(
+                            <option key = {country}>{country}</option>
+                        );
+                    })
+                    : null
+                
+                } 
                 </select>
             </div>
         </header>
