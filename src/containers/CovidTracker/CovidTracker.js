@@ -21,8 +21,8 @@ class CovidTracker extends Component{
                 };
                 this.setState({
                     stats:result,
-                    countryId: countrySlug,
-                    didMountRender: true
+                    countryId: countrySlug,                 
+                    didMountRender: true    //now that we have data, we can render options in select tag
                 });
             })
             .catch(error => console.log('error', error));
@@ -30,18 +30,17 @@ class CovidTracker extends Component{
 
     
     state = {
-        stats : null,
-        countryId: null,
-        actualCountry:null,
-        didMountRender: false,  //checks if we fetched data, so we can render country names in select tag
-        last7Days:{
+        stats : null,       //data from fetch, about covid19 on world and in countries
+        countryId: null,    //country names, used as option in select in header 
+        didMountRender: false,  //checks if we fetched data, so we can render country names as <option in select tag
+        last7Days:{         //data of last 7 days in specific country 
             death: null,
             activeCases:null,
             recover:null
         }
     };
 
-    fetchDataForCharts = (countryName) => {
+    fetchDataForCharts = (countryName) => {     //fetching data about specific country (selected from select tag)
         var active = [];
         var deaths = [];
         var recovered = [];
@@ -53,13 +52,13 @@ class CovidTracker extends Component{
           })
             .then(response => response.json())
             .then(result => {
-                for(let i = result.length - 7; i < result.length; i++){
+                for(let i = result.length - 7; i < result.length; i++){ //looping through fetched data, taking info from last 7 days
                     active.push(result[i].Active);
                     deaths.push(result[i].Deaths);
                     recovered.push(result[i].Recovered);
                 }
                 console.log(result);
-                this.setState({last7Days:{
+                this.setState({last7Days:{  //setting data to state
                     activeCases: active,
                     death: deaths,
                     recover: recovered }
