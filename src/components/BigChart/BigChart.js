@@ -2,7 +2,7 @@ import React from 'react';
 
 const BigChart = (props) => {
     return(
-        <div>BigChart</div>
+        <div className = "bigchart-cont">BigChart</div>
     );
 };
 
