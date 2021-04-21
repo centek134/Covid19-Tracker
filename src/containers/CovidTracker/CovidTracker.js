@@ -30,6 +30,7 @@ class CovidTracker extends Component{
 
     
     state = {
+        actualCountry: null,
         stats : null,       //data from fetch, about covid19 on world and in countries
         countryId: null,    //country names, used as option in select in header 
         didMountRender: false,  //checks if we fetched data, so we can render country names as <option in select tag
@@ -38,14 +39,22 @@ class CovidTracker extends Component{
             activeCases: null,
             recover: null,
             date: null
+        },
+        Global:{
+            newCases: null,
+            newDeaths: null,
+            newRecover: null,
+            totalCases: null,
+            totalDeaths: null,
+            totalRecover: null
         }
     };
 
     fetchDataForCharts = (countryName) => {     //fetching data about specific country (selected from select tag)
-        var active = [];
-        var deaths = [];
-        var recovered = [];
-        var date = [];
+        let active = [];
+        let deaths = [];
+        let recovered = [];
+        let date = [];
 
 
         fetch(`https://api.covid19api.com/total/country/${countryName}`, {
@@ -60,14 +69,14 @@ class CovidTracker extends Component{
                     recovered.push(result[i].Recovered);
                     date.push(result[i].Date.slice(0,10));
                     
-                }
-                console.log(result);
+                };
                 this.setState({last30Days:{  //setting data to state
                     activeCases: active,
                     death: deaths,
                     recover: recovered,
-                    date: date
-                }
+                    date: date,
+                },
+                actualCountry: `${countryName}`
                 });
             })
             .catch(error => console.log('error', error));
@@ -84,12 +93,14 @@ class CovidTracker extends Component{
                     selectOptions = {this.state.countryId}/>
                 <main>
                     <section className = "sml-chart">
-                        <SmallChart date = {this.state.last30Days.date} ourData = {this.state.last30Days.activeCases} title = "Active Cases"/>
-                        <SmallChart date = {this.state.last30Days.date} ourData = {this.state.last30Days.death} title = "Total Deaths"/>
-                        <SmallChart date = {this.state.last30Days.date} ourData = {this.state.last30Days.recover} title = "Total Recovered"/>
+                        <h2 className = "sml-title">{this.state.actualCountry? `${this.state.actualCountry}, data from last 30 days:` : `Select country`}</h2>
+                        <div className = "flexwrap">
+                            <SmallChart color = "#ff4800" date = {this.state.last30Days.date} ourData = {this.state.last30Days.activeCases} title = "Active Cases"/>
+                            <SmallChart color = "#000000" date = {this.state.last30Days.date} ourData = {this.state.last30Days.death} title = "Total Deaths"/>
+                            <SmallChart color = "#15ff00" date = {this.state.last30Days.date} ourData = {this.state.last30Days.recover} title = "Total Recovered"/>
+                        </div>
                     </section>
                     <section className = "big-chart">
-                        <BigChart/>
                         <BigChart/>
                     </section>
                 </main>
