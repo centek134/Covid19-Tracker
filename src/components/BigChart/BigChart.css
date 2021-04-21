@@ -1,8 +1,4 @@
-.big-chart{
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-}
-.big-chart{
-    width: 60%;
+.bigchart-cont{
+    width: 700px;
+    height: 400px;
 }

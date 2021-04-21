@@ -15,10 +15,7 @@ const SmallChart = (props) => {
         };
         for(let i = 0; i < data.length; i++){
              data[i].date = date[i];
-        }
-        
-      //  data[data.length-1].name = 
-      console.log(data);
+        };
     };
 
     return(
@@ -27,7 +24,7 @@ const SmallChart = (props) => {
             <div style = {{width: '90%', height: '75%'}}>
                 <ResponsiveContainer>
                     <LineChart  data={data}>
-                        <Line type="monotone" dataKey = "total" stroke="#8884d8" />
+                        <Line type="monotone" dataKey = "total" strokeWidth = {3} stroke = {props.color} />
                         <CartesianGrid stroke="#ccc" />
                         <XAxis hide = "true" dataKey = "date" />
                         <YAxis />

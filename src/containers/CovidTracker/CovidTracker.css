@@ -1,3 +1,25 @@
-main{
+.sml-chart{
     display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+.sml-chart .flexwrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.sml-chart .sml-title{
+    width: 100%;
+    text-align: center;
+    font-size: 32px;
+}
+.sml-chart .sml-title::first-letter{
+    text-transform: capitalize;
+}
+.big-chart{
+    display: flex;
+    align-items: center;
+}
+.big-chart{
+    width: 100%;
 }

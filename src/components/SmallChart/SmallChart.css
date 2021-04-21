@@ -1,11 +1,3 @@
-.sml-chart{
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-}
-.sml-chart{
-    width: 40%;
-}
 .smlchart-cont{
     width: 550px;
     height: 400px;
