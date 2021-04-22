@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header.js';
 import Footer from '../../components/Footer/Footer.js';
 import BigChart from '../../components/BigChart/BigChart.js';
 import SmallChart from '../../components/SmallChart/SmallChart.js';
+import GlobalStats from '../../components/GlobalStats/GlobalStats.js';
 
 class CovidTracker extends Component{
 
@@ -22,7 +23,15 @@ class CovidTracker extends Component{
                 this.setState({
                     stats:result,
                     countryId: countrySlug,                 
-                    didMountRender: true    //now that we have data, we can render options in select tag
+                    didMountRender: true,    //now that we have data, we can render options in select tag
+                    Global:{
+                        newCases: result.Global.NewConfirmed,
+                        newDeaths: result.Global.NewDeaths,
+                        newRecover: result.Global.NewRecovered,
+                        totalCases: result.Global.TotalConfirmed,
+                        totalDeaths: result.Global.TotalDeaths,
+                        totalRecover: result.Global.TotalRecovered
+                    }
                 });
             })
             .catch(error => console.log('error', error));
@@ -101,7 +110,16 @@ class CovidTracker extends Component{
                         </div>
                     </section>
                     <section className = "big-chart">
-                        <BigChart/>
+                        <GlobalStats
+                        case = {this.state.Global.newCases}
+                        death = {this.state.Global.newDeaths}
+                        recover = {this.state.Global.newRecover}
+                        />
+                        <BigChart
+                        case = {this.state.Global.totalCases}
+                        death = {this.state.Global.totalDeaths}
+                        recover = {this.state.Global.totalRecover}
+                        />
                     </section>
                 </main>
                 <Footer/>
