@@ -16,10 +16,9 @@
 .sml-chart .sml-title::first-letter{
     text-transform: capitalize;
 }
-.big-chart{
+.wrapp section.big-chart{
+    width: 100%;
     display: flex;
     align-items: center;
-}
-.big-chart{
-    width: 100%;
+    justify-content: space-around;
 }

@@ -1,4 +1,13 @@
 .bigchart-cont{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
     width: 700px;
-    height: 400px;
+    height: 500px;
+    box-shadow: 0 0 10px rgb(121, 121, 121);
+}
+.bigchart-cont h2{
+    width: 100%;
+    padding: 25px 0 0 35px;
 }
