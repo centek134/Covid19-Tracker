@@ -1,0 +1,19 @@
+.global-stats{
+    border: 2px solid black;
+}
+.global-stats h2{
+    text-align: center;
+    margin: 10px 0;
+}
+.global-stats article{
+    padding: 15px 20px;
+}
+.global-stats article h3 span.red{
+    color: rgb(255, 72, 0);
+}
+.global-stats article h3 span.black{
+    color: rgb(0, 0, 0);
+}
+.global-stats article h3 span.green{
+    color: rgb(13, 161, 0);
+}
