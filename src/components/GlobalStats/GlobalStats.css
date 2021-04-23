@@ -1,19 +1,34 @@
 .global-stats{
-    border: 2px solid black;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 0 10px rgb(121, 121, 121);
+    height: 350px;
 }
 .global-stats h2{
     text-align: center;
-    margin: 10px 0;
+    font-size: 26px;
+    padding: 10px;
 }
 .global-stats article{
-    padding: 15px 20px;
+    padding: 0px 10px;
 }
-.global-stats article h3 span.red{
+.global-stats article h3{
+    font-size: 20px;
+    text-align: center;
+}
+.global-stats article p{
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 600;
+}
+.global-stats article p.red{
     color: rgb(255, 72, 0);
 }
-.global-stats article h3 span.black{
+.global-stats article p.black{
     color: rgb(0, 0, 0);
 }
-.global-stats article h3 span.green{
+.global-stats article p.green{
     color: rgb(13, 161, 0);
 }

@@ -25,6 +25,7 @@ class CovidTracker extends Component{
                     countryId: countrySlug,                 
                     didMountRender: true,    //now that we have data, we can render options in select tag
                     Global:{
+                        date: result.Global.Date.slice(0,10),
                         newCases: result.Global.NewConfirmed,
                         newDeaths: result.Global.NewDeaths,
                         newRecover: result.Global.NewRecovered,
@@ -50,6 +51,7 @@ class CovidTracker extends Component{
             date: null
         },
         Global:{
+            date: null,
             newCases: null,
             newDeaths: null,
             newRecover: null,
@@ -110,16 +112,19 @@ class CovidTracker extends Component{
                         </div>
                     </section>
                     <section className = "big-chart">
-                        <GlobalStats
-                        case = {this.state.Global.newCases}
-                        death = {this.state.Global.newDeaths}
-                        recover = {this.state.Global.newRecover}
-                        />
-                        <BigChart
-                        case = {this.state.Global.totalCases}
-                        death = {this.state.Global.totalDeaths}
-                        recover = {this.state.Global.totalRecover}
-                        />
+                        <h2 className = "big-title">Global data from {this.state.Global.date}</h2>
+                        <div className = "big-chart-flex">
+                            <GlobalStats
+                            case = {this.state.Global.newCases}
+                            death = {this.state.Global.newDeaths}
+                            recover = {this.state.Global.newRecover}
+                            />
+                            <BigChart
+                            case = {this.state.Global.totalCases}
+                            death = {this.state.Global.totalDeaths}
+                            recover = {this.state.Global.totalRecover}
+                            />
+                        </div>
                     </section>
                 </main>
                 <Footer/>

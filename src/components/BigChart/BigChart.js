@@ -12,7 +12,7 @@ const BigChart = (props) => {
     return(
         <article className = "bigchart-cont">
             <h2>Total</h2>
-            <div style ={{width:"90%", height: "80%"}}>
+            <section style ={{width:"90%", height: "80%"}}>
               <ResponsiveContainer>
                 <PieChart width={400} height={450}>
                   <Pie
@@ -29,7 +29,7 @@ const BigChart = (props) => {
                    <Legend align = "left" height={36}/>
                 </PieChart>
               </ResponsiveContainer>
-            </div>
+            </section>
         </article>
     );
 };

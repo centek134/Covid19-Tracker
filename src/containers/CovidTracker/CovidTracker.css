@@ -17,7 +17,15 @@
     text-transform: capitalize;
 }
 .wrapp section.big-chart{
+    height: 650px;
     width: 100%;
+}
+.wrapp section.big-chart .big-title{
+    text-align: center;
+    font-size: 32px;
+}
+.wrapp section.big-chart div.big-chart-flex{
+    height: 600px;
     display: flex;
     align-items: center;
     justify-content: space-around;

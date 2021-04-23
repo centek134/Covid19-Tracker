@@ -4,15 +4,18 @@ import './GlobalStats.css';
 const GlobalStats = (props) => {
     return(
         <section className = "global-stats">
-            <h2>Daily Global Cases:</h2>
+            <h2>Daily Global Cases</h2>
             <article>
-                <h3>New Cases: <span className = "red">+22235</span></h3>
+                <h3>New Cases</h3>
+                <p className = "red">{props.case}</p>
             </article>
             <article>
-                <h3>New Deaths: <span className = "black">+1122</span></h3>
+                <h3>New Deaths</h3>
+                <p className = "black">{props.death}</p>
             </article>
             <article>
-                <h3>New Recovered: <span className = "green">+57742244</span></h3>
+                <h3>New Recovered</h3>
+                <p className = "green">{props.recover}</p>
             </article>
         </section>
     );
