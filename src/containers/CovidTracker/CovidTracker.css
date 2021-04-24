@@ -9,7 +9,6 @@
     justify-content: space-around;
 }
 .sml-chart .sml-title{
-    width: 100%;
     text-align: center;
     font-size: 32px;
 }
@@ -29,4 +28,28 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+
+@media only screen and (min-width:651px) and (max-width:1100px){
+    .sml-chart .flexwrap{
+        flex-flow: column;
+    }
+}
+@media only screen and (max-width:650px){
+    .sml-chart .flexwrap{
+        flex-flow: column;
+    }
+    .wrapp section.big-chart{
+        height: 900px;
+        width: 100%;
+    }
+    .wrapp section.big-chart div.big-chart-flex{
+        height: 800px;
+        flex-flow: column;
+
+    }
+    .sml-chart .sml-title, .wrapp section.big-chart .big-title {
+        font-size: 24px;
+    }
 }

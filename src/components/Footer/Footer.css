@@ -8,3 +8,11 @@
 .wrapp .foot p{
     line-height: 50px;
 }
+@media only screen and (max-width:400px){
+    .wrapp .foot{
+        height: 40px;
+    }
+    .wrapp .foot p{
+        line-height: normal;
+    }
+}

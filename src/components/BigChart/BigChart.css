@@ -12,3 +12,16 @@
     width: 100%;
     padding: 0 0 0 35px;
 }
+
+@media only screen and (min-width:401px) and (max-width:1100px){
+    .bigchart-cont{
+        width: 350px;
+        height: 350px;
+    }
+}
+@media only screen and (max-width:400px){
+    .bigchart-cont{
+        width: 275px;
+        height: 275px;
+    }
+}
