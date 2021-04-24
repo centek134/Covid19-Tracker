@@ -3,7 +3,6 @@ import { PieChart, Pie, ResponsiveContainer, Legend } from 'recharts';
 import './BigChart.css';
 
 const BigChart = (props) => {
-
   const data = [
     { name: 'Confirmed Cases', value: props.case, fill: "#ff4800" },
     { name: 'Deaths', value: props.death, fill: "#000000" },
@@ -11,18 +10,18 @@ const BigChart = (props) => {
   ];
     return(
         <article className = "bigchart-cont">
-            <h2>Total</h2>
+            <h2>World Total</h2>
             <section style ={{width:"90%", height: "80%"}}>
               <ResponsiveContainer>
-                <PieChart width={400} height={450}>
-                  <Pie
+                <PieChart>
+                  <Pie className = "hello"
                     dataKey="value"
                     startAngle={0}
                     endAngle={360}
                     data={data}
                     cx="50%"
                     cy="50%"
-                    outerRadius={150}
+                    outerRadius="80%"
                     fill="#8884d8"
                     label
                   />
