@@ -9,12 +9,11 @@ const SmallChart = (props) => {
     if(props.ourData !== null){   
         for(let item of props.ourData){
             data.push({
-                total: item
-                
+                total: item     //pushing data about deaths,cases,recovered
             });
         };
         for(let i = 0; i < data.length; i++){
-             data[i].date = date[i];
+             data[i].date = date[i]; //pushing info about date so that it matches cases and can be displayed in chart
         };
     };
 

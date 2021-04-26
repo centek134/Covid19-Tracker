@@ -50,7 +50,7 @@ class CovidTracker extends Component{
             recover: null,
             date: null
         },
-        Global:{
+        Global:{    // data fetched for bigChart and globalstats componenst, its all about global covid cases
             date: null,
             newCases: null,
             newDeaths: null,
@@ -76,7 +76,7 @@ class CovidTracker extends Component{
             .then(result => {
                 for(let i = result.length - 30; i < result.length; i++){ //looping through fetched data, taking info from last 30 days
                     active.push(result[i].Active);
-                    deaths.push(result[i].Deaths);
+                    deaths.push(result[i].Deaths);          //pushing all info to earlier created arrays
                     recovered.push(result[i].Recovered);
                     date.push(result[i].Date.slice(0,10));
                     
@@ -130,7 +130,7 @@ class CovidTracker extends Component{
                 <Footer/>
             </div>
         );
-    }
-}
+    };
+};
 
 export default CovidTracker;

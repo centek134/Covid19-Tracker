@@ -3,6 +3,8 @@ import { PieChart, Pie, ResponsiveContainer, Legend } from 'recharts';
 import './BigChart.css';
 
 const BigChart = (props) => {
+
+  //data that we provide for chart
   const data = [
     { name: 'Confirmed Cases', value: props.case, fill: "#ff4800" },
     { name: 'Deaths', value: props.death, fill: "#000000" },
